@@ -5,6 +5,8 @@ ENV PORT=8080
 
 RUN npm install -g openclaw@2026.6.8
 
+COPY dist/control-ui /usr/local/lib/node_modules/openclaw/dist/control-ui
+
 RUN mkdir -p /root/.openclaw && echo '{\
   "gateway": {\
     "mode": "local",\
