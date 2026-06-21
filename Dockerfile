@@ -12,7 +12,7 @@ RUN mkdir -p /root/.openclaw && echo '{\
     "mode": "local",\
     "auth": {\
       "mode": "token",\
-      "token": "openclaw"\
+      "token": "openclaw764484"\
     },\
     "http": {\
       "endpoints": {\
