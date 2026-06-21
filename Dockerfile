@@ -5,6 +5,8 @@ ENV PORT=8080
 
 RUN npm install -g openclaw@2026.6.8
 
+COPY dist/control-ui /usr/local/lib/node_modules/openclaw/dist/control-ui
+
 RUN mkdir -p /root/.openclaw && echo '{\
   "gateway": {\
     "mode": "local",\
@@ -29,7 +31,11 @@ RUN mkdir -p /root/.openclaw && echo '{\
         "apiKey": "${OPENCODE_API_KEY}",\
         "api": "openai-completions",\
         "models": [\
-          {"id": "deepseek-v4-flash-free", "name": "DeepSeek V4 Flash Free", "contextWindow": 128000, "maxTokens": 32768}\
+          {"id": "deepseek-v4-flash-free", "name": "DeepSeek V4 Flash Free", "contextWindow": 128000, "maxTokens": 65536},\
+          {"id": "mimo-v2.5-free", "name": "MiMo V2.5 Free", "contextWindow": 128000, "maxTokens": 65536},\
+          {"id": "nemotron-3-ultra-free", "name": "Nemotron 3 Ultra Free", "contextWindow": 128000, "maxTokens": 65536},\
+          {"id": "north-mini-code-free", "name": "North Mini Code Free", "contextWindow": 128000, "maxTokens": 65536},\
+          {"id": "big-pickle", "name": "Big Pickle", "contextWindow": 128000, "maxTokens": 65536}\
         ]\
       }\
     }\
